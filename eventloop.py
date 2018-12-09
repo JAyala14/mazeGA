@@ -22,20 +22,23 @@ class EventLoop:
             elif event.type == pygame.KEYUP:
                 self.check_keyup_events(event, player)
 
-        ##for i in inputs:
-        ##    if i == 0:
-        ##        player.centery += settings.pac_man_speedfactor
-         ##       player.index = 6
-          ##      inputs.remove(0)
-         ##   if i == 1:
-          ##      player.centerx += settings.pac_man_speedfactor
-          ##      player.index = 4
-          ##  if i == 2:
-           ##     player.centerx -= settings.pac_man_speedfactor
-           ##     player.index = 0
-           ## if i == 3:
-           ##     player.centery -= settings.pac_man_speedfactor
-           ##     player.index = 2
+        for i in inputs:
+            if i == 0:
+                player.moving_up = True
+                player.index = 6
+                inputs.remove(0)
+            if i == 1:
+                player.moving_right = True
+                player.index = 4
+                inputs.remove(1)
+            if i == 2:
+                player.moving_down = True
+                player.index = 0
+                inputs.remove(2)
+            if i == 3:
+                player.moving_left = True
+                player.index = 2
+                inputs.remove(3)
 
 
     def check_keydown_events(self, event, player):

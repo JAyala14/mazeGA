@@ -49,6 +49,8 @@ class Player(Sprite):
         self.moving_down = False
         self.moving_up = False
 
+        self.switch = False
+
     def build(self):
         dx, dy = self.deltax, self.deltay
 
@@ -79,6 +81,7 @@ class Player(Sprite):
         d = int((self.rect.centery + 10) / 15)
         l = int((self.rect.centerx - 10) / 15)
         u = int((self.rect.centery - 10) / 15)
+
         if self.moving_up and (self.rows[u-1][r] != 'X') and (self.rows[u-1][l] != 'X'):
             self.centery -= self.settings.pac_man_speedfactor
         if self.moving_down and (self.rows[d+1][r] != 'X') and (self.rows[d+1][l] != 'X'):

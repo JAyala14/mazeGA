@@ -23,7 +23,8 @@ class Game:
         self.inputs = []
 
         self.inputs.append(1)
-
+        self.inputs.append(1)
+        self.inputs.append(1)
 
 
     def play(self):
@@ -36,7 +37,7 @@ class Game:
             self.player.update(self.maze)
 
             self.display_game()
-            clock.tick(20)
+            clock.tick(500)
 
     def display_game(self):
         self.screen.fill((0, 0, 0))

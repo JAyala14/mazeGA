@@ -1,5 +1,5 @@
 import numpy
-import GA
+import testGA
 
 """
 The y=target is to maximize this equation ASAP:
@@ -34,18 +34,18 @@ num_generations = 5
 for generation in range(num_generations):
     print("Generation : ", generation)
     # Measing the fitness of each chromosome in the population.
-    fitness = GA.cal_pop_fitness(equation_inputs, new_population)
+    fitness = testGA.cal_pop_fitness(equation_inputs, new_population)
 
     # Selecting the best parents in the population for mating.
-    parents = GA.select_mating_pool(new_population, fitness,
+    parents = testGA.select_mating_pool(new_population, fitness,
                                       num_parents_mating)
 
     # Generating next generation using crossover.
-    offspring_crossover = GA.crossover(parents,
+    offspring_crossover = testGA.crossover(parents,
                                        offspring_size=(pop_size[0]-parents.shape[0], num_weights))
 
     # Adding some variations to the offspring using mutation.
-    offspring_mutation = GA.mutation(offspring_crossover)
+    offspring_mutation = testGA.mutation(offspring_crossover)
 
     # Creating the new population based on the parents and offspring.
     new_population[0:parents.shape[0], :] = parents
@@ -56,7 +56,7 @@ for generation in range(num_generations):
 
 # Getting the best solution after iterating finishing all generations.
 # At first, the fitness is calculated for each solution in the final generation.
-fitness = GA.cal_pop_fitness(equation_inputs, new_population)
+fitness = testGA.cal_pop_fitness(equation_inputs, new_population)
 # Then return the index of that solution corresponding to the best fitness.
 best_match_idx = numpy.where(fitness == numpy.max(fitness))
 

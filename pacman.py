@@ -21,33 +21,15 @@ class Game:
         self.player = Player(self.settings, self.screen, self.maze)
 
         self.inputs = []
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('down')
-        self.inputs.append('down')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('down')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('left')
-        self.inputs.append('left')
+        self.inputs.append(1)
+        self.inputs.append(0)
+        self.inputs.append(0)
+        self.inputs.append(3)
+        self.inputs.append(0)
+        self.inputs.append(0)
+        self.inputs.append(0)
+        self.inputs.append(1)
+        self.inputs.append(1)
 
 
     def play(self):
@@ -55,6 +37,7 @@ class Game:
         eloop = EventLoop(finished=False)
 
         eloop.movePLAYER(self.player, self.inputs)
+        self.player.displayEND()
 
         while not eloop.finished:
             eloop.check_events(self.settings, self.player, self.maze, self.inputs)

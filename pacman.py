@@ -54,6 +54,8 @@ class Game:
         clock = pygame.time.Clock()
         eloop = EventLoop(finished=False)
 
+        eloop.movePLAYER(self.player, self.inputs)
+
         while not eloop.finished:
             eloop.check_events(self.settings, self.player, self.maze, self.inputs)
 

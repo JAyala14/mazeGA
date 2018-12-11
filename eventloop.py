@@ -24,17 +24,21 @@ class EventLoop:
 
         for x in inputs:
             if x == 0:
-                player.moving_up = True
+                player.moveUP()
                 player.index = 6
+                del inputs[0]
             if x == 1:
-                player.moving_right = True
+                player.moveRIGHT()
                 player.index = 4
+                del inputs[0]
             if x == 2:
-                player.moving_down = True
+                player.moveDOWN()
                 player.index = 0
+                del inputs[0]
             if x == 3:
-                player.moving_left = True
+                player.moveLEFT()
                 player.index = 2
+                del inputs[0]
 
 
     def check_keydown_events(self, event, player):

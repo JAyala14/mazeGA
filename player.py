@@ -73,7 +73,7 @@ class Player(Sprite):
         self.centerx = self.startx
 
     def update(self, maze):
-        self.move()
+        #self.move()
         self.animate()
 
     def move(self):
@@ -93,6 +93,57 @@ class Player(Sprite):
 
         self.rect.centery = self.centery
         self.rect.centerx = self.centerx
+
+    def moveUP(self):
+        r = int((self.rect.centerx + 10) / 15)
+        d = int((self.rect.centery + 10) / 15)
+        l = int((self.rect.centerx - 10) / 15)
+        u = int((self.rect.centery - 10) / 15)
+
+        if (self.rows[u-1][r] != 'X') and (self.rows[u-1][l] != 'X'):
+            self.centery -= self.settings.pac_man_speedfactor
+
+        self.rect.centery = self.centery
+        self.rect.centerx = self.centerx
+
+    def moveRIGHT(self):
+        r = int((self.rect.centerx + 10) / 15)
+        d = int((self.rect.centery + 10) / 15)
+        l = int((self.rect.centerx - 10) / 15)
+        u = int((self.rect.centery - 10) / 15)
+
+        if (self.rows[u][r+1] != 'X') and (self.rows[d][r+1] != 'X'):
+            self.centerx += self.settings.pac_man_speedfactor
+
+        self.rect.centery = self.centery
+        self.rect.centerx = self.centerx
+
+    def moveDOWN(self):
+        r = int((self.rect.centerx + 10) / 15)
+        d = int((self.rect.centery + 10) / 15)
+        l = int((self.rect.centerx - 10) / 15)
+        u = int((self.rect.centery - 10) / 15)
+
+        if (self.rows[d+1][r] != 'X') and (self.rows[d+1][l] != 'X'):
+            self.centery += self.settings.pac_man_speedfactor
+
+        self.rect.centery = self.centery
+        self.rect.centerx = self.centerx
+
+    def moveLEFT(self):
+        r = int((self.rect.centerx + 10) / 15)
+        d = int((self.rect.centery + 10) / 15)
+        l = int((self.rect.centerx - 10) / 15)
+        u = int((self.rect.centery - 10) / 15)
+
+        if (self.rows[u][l-1] != 'X') and (self.rows[d][l-1] != 'X'):
+            self.centerx -= self.settings.pac_man_speedfactor
+
+        self.rect.centery = self.centery
+        self.rect.centerx = self.centerx
+
+
+
 
     def animate(self):
         self.index += 1

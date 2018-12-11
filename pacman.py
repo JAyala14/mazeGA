@@ -21,10 +21,9 @@ class Game:
         self.player = Player(self.settings, self.screen, self.maze)
 
         self.inputs = []
-
         self.inputs.append(1)
         self.inputs.append(1)
-        self.inputs.append(1)
+        self.inputs.append(0)
 
 
     def play(self):

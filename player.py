@@ -49,8 +49,6 @@ class Player(Sprite):
         self.moving_down = False
         self.moving_up = False
 
-        self.switch = False
-
     def build(self):
         dx, dy = self.deltax, self.deltay
 

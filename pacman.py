@@ -21,9 +21,33 @@ class Game:
         self.player = Player(self.settings, self.screen, self.maze)
 
         self.inputs = []
-
-        self.inputs.append(1)
-
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('up')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('up')
+        self.inputs.append('up')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('down')
+        self.inputs.append('down')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('down')
+        self.inputs.append('right')
+        self.inputs.append('right')
+        self.inputs.append('up')
+        self.inputs.append('right')
+        self.inputs.append('up')
+        self.inputs.append('up')
+        self.inputs.append('up')
+        self.inputs.append('left')
+        self.inputs.append('left')
 
 
     def play(self):
@@ -36,7 +60,7 @@ class Game:
             self.player.update(self.maze)
 
             self.display_game()
-            clock.tick(20)
+            clock.tick(500)
 
     def display_game(self):
         self.screen.fill((0, 0, 0))

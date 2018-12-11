@@ -22,14 +22,32 @@ class Game:
 
         self.inputs = []
         self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(0)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(0)
+        self.inputs.append(0)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(2)
+        self.inputs.append(2)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(2)
+        self.inputs.append(1)
+        self.inputs.append(1)
+        self.inputs.append(0)
+        self.inputs.append(1)
+        self.inputs.append(0)
         self.inputs.append(0)
         self.inputs.append(0)
         self.inputs.append(3)
-        self.inputs.append(0)
-        self.inputs.append(0)
-        self.inputs.append(0)
-        self.inputs.append(1)
-        self.inputs.append(1)
+        self.inputs.append(3)
 
 
     def play(self):
@@ -37,6 +55,7 @@ class Game:
         eloop = EventLoop(finished=False)
 
         eloop.movePLAYER(self.player, self.inputs)
+        self.player.setFITNESS()
         self.player.displayEND()
 
         while not eloop.finished:

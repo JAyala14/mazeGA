@@ -12,7 +12,7 @@ from settings import Settings
 
 class Game:
 
-    def __init__(self, inputs):
+    def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode((735, 400))
         pygame.display.set_caption("Pac-man")
@@ -54,3 +54,15 @@ class Game:
         self.player.blitme()
 
         pygame.display.flip()
+<<<<<<< HEAD
+=======
+
+inputs = []
+
+for i in range(41):
+    randomNUMBER = random.randint(0,3)
+    inputs.append(randomNUMBER)
+game = Game()
+game.play(inputs)
+game.showLAST(inputs)
+>>>>>>> 9ff86c0b3a06be582ae9acd39ae0a3c8a919d410

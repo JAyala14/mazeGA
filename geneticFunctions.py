@@ -13,13 +13,13 @@ def initializePopulation(population):
 
 #Get index of most fit
 def populationMF(population):
-    fitIndex = 0
+    mostFIT = 0
+
     for i in range(len(population)):
+
         if(population[i].fitness >= population[i-1].fitness):
             fitIndex = i
     return fitIndex
-
-
 
 #Sort fittest to least fit
 #def sortFit(population):
@@ -47,16 +47,26 @@ def singleCrossover(parent1,parent2):
     return child
 
 #Crossover Functions
-#def populationCrossover(population):
+def populationCrossover(population):
 
-    #newPopulation = []
-    #populationSize = len(population)
+    temp = 4
+    newPopulation = []
+    populationSize = len(population)
 
-    #for i in range(populationSize):
+    population = sorted(population, key=population.fitness, reverse=True) #sorts population by fitenss in largest to smallest
 
-        #Sort from most fit to least fit?
+    for i in range(10):
+        if (i < 5):
+            newPopulation[i] = population[i]
+        else:
+            for j in range(temp):
+                newPopulation.append(singleCrossover(population[i-5], population[j+5-temp]))        #crosses over first 5 fittest parents
+            temp-=1
 
-    #return newPopulation
+    newMutation = 0.3 - (newPopulation.generation*.05)              #Decreases 5% every generation
+    newPopulation = populationMutation(newPopulation, newMutation)  #mutates new population at new mutation rate
+
+    return newPopulation
 
 
 #Mutate single gene

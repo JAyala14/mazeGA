@@ -34,6 +34,7 @@ class Game:
         print(self.fitness)
 
     def showLAST(self, inputs):
+        clock = pygame.time.Clock()
         eloop = EventLoop(finished=False)
 
         eloop.movePLAYER(self.player, inputs)
@@ -47,10 +48,10 @@ class Game:
             self.player.update(self.maze)
 
             self.display_game()
+            clock.tick(20)
 
     def display_game(self):
         self.screen.fill((0, 0, 0))
         self.maze.blitme()
         self.player.blitme()
-
         pygame.display.flip()

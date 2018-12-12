@@ -24,7 +24,6 @@ print(fitnessArray)
 
 
 mostFit = 0
-
 for i in range(len(fitnessArray)):
     if(fitnessArray[i] >= fitnessArray[mostFit]):
         mostFit = i

@@ -13,9 +13,19 @@ populationArray = gf.initializePopulation(MAXPOP)
 test_instructions = populationArray[4]
 
 
+for i in range(MAXPOP):
+    gamePlay = Game(populationArray[i])
+    gamePlay.play(populationArray[i].instructions)
 
-gamePlay = Game(test_instructions)
-gamePlay.play(test_instructions)
+x = gf.populationMF(populationArray)
+print(x)
+
+
+#gf.sortFit(populationArray)
+
+    #gamePlay.showLAST(populationArray[i].instructions)
+
+
 
 #populationArray = gf.initializePopulation(MAXPOP)
 #print(populationArray[5].instructions, '\n')

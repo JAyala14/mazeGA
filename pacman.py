@@ -54,12 +54,3 @@ class Game:
         self.player.blitme()
 
         pygame.display.flip()
-
-inputs = []
-
-for i in range(41):
-    randomNUMBER = random.randint(0,3)
-    inputs.append(randomNUMBER)
-game = Game(inputs)
-game.play(inputs)
-game.showLAST(inputs)

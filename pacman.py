@@ -1,6 +1,7 @@
 import pygame
 
 import pygame.gfxdraw
+import random
 
 from maze import Maze
 from eventloop import EventLoop
@@ -21,38 +22,19 @@ class Game:
         self.player = Player(self.settings, self.screen, self.maze)
 
         self.inputs = []
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('down')
-        self.inputs.append('down')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('down')
-        self.inputs.append('right')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('right')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('up')
-        self.inputs.append('left')
-        self.inputs.append('left')
+
+        for i in range(41):
+            randomNUMBER = random.randint(0,3)
+            self.inputs.append(randomNUMBER)
 
 
     def play(self):
         clock = pygame.time.Clock()
         eloop = EventLoop(finished=False)
+
+        eloop.movePLAYER(self.player, self.inputs)
+        self.player.setFITNESS()
+        self.player.displayEND()
 
         while not eloop.finished:
             eloop.check_events(self.settings, self.player, self.maze, self.inputs)

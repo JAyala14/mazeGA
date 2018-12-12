@@ -26,6 +26,7 @@ print(populationArray[5].instructions, '\n')
 #child = gf.singleCrossover(parent1, parent2)
 
 #print (child.instructions, '\n')
+<<<<<<< HEAD
 
 
 
@@ -37,3 +38,5 @@ print(populationArray[5].instructions, '\n')
 
 #for i in range(MAXPOP):
 #    print(populationArray[i].instructions, '\n')
+=======
+>>>>>>> 07cdd02c50f54f8c83b9b4d5dbe53b953f490cd7

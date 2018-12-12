@@ -22,26 +22,19 @@ class EventLoop:
             elif event.type == pygame.KEYUP:
                 self.check_keyup_events(event, player)
 
+    def movePLAYER(self, player, inputs):
         for x in inputs:
-            if x == 'up':
+            if x == 0:
                 player.moveUP()
-                inputs.pop(0)
-                pygame.time.wait(100)
                 player.index = 6
-            if x == 'right':
+            if x == 1:
                 player.moveRIGHT()
-                inputs.pop(0)
-                pygame.time.wait(100)
                 player.index = 4
-            if x == 'down':
+            if x == 2:
                 player.moveDOWN()
-                inputs.pop(0)
-                pygame.time.wait(100)
                 player.index = 0
-            if x == 'left':
+            if x == 3:
                 player.moveLEFT()
-                inputs.pop(0)
-                pygame.time.wait(100)
                 player.index = 2
 
     def check_keydown_events(self, event, player):

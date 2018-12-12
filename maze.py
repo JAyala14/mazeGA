@@ -23,6 +23,9 @@ class Maze:
         self.dots = []
         self.dot = ImageRect(screen, dotfile, sz, sz)
 
+        self.hiddendots = []
+        self.hiddendot = ImageRect(screen, dotfile, sz, sz)
+
         self.build()
 
     def build(self):
@@ -40,6 +43,8 @@ class Maze:
                     self.gates.append(pygame.Rect(ncol * dx, nrow * dy, w, h))
                 if col == 'S':
                     self.dots.append(pygame.Rect(ncol * dx, nrow * dy, w, h))
+                if col == '0':
+                    self.hiddendots.append(pygame.Rect(ncol * dx, nrow * dy, w, h))
 
     def blitme(self):
         for rect in self.bricks:
@@ -48,3 +53,6 @@ class Maze:
             self.screen.blit(self.gate.image, rect)
         for rect in self.dots:
             self.screen.blit(self.dot.image, rect)
+
+        for rect in self.hiddendots:
+            self.screen.blit(self.hiddendot.image, rect)

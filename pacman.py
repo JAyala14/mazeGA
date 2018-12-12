@@ -11,7 +11,7 @@ from settings import Settings
 
 class Game:
 
-    def __init__(self):
+    def __init__(self, inputs):
         pygame.init()
         self.screen = pygame.display.set_mode((735, 400))
         pygame.display.set_caption("Pac-man")
@@ -21,23 +21,17 @@ class Game:
 
         self.player = Player(self.settings, self.screen, self.maze)
 
-        self.inputs = []
 
-        for i in range(41):
-            randomNUMBER = random.randint(0,3)
-            self.inputs.append(randomNUMBER)
-
-
-    def play(self):
+    def play(self, inputs):
         clock = pygame.time.Clock()
         eloop = EventLoop(finished=False)
 
-        eloop.movePLAYER(self.player, self.inputs)
+        eloop.movePLAYER(self.player, inputs)
         self.player.setFITNESS()
         self.player.displayEND()
 
         while not eloop.finished:
-            eloop.check_events(self.settings, self.player, self.maze, self.inputs)
+            eloop.check_events(self.settings, self.player, self.maze, inputs)
 
             self.player.update(self.maze)
 
@@ -51,6 +45,10 @@ class Game:
 
         pygame.display.flip()
 
+inputs = []
 
-game = Game()
-game.play()
+for i in range(41):
+    randomNUMBER = random.randint(0,3)
+    inputs.append(randomNUMBER)
+game = Game(inputs)
+game.play(inputs)

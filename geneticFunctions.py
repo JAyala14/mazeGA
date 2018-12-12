@@ -1,11 +1,11 @@
 #Genetic Algorithm Functions
 import random
 from geneticAlgorithm import run
+from pacman import Game
 
 #Initializing population
 def initializePopulation(population):
     randomPopulation = []
-
     for i in range(population):
         randomPopulation.append(run())
 
@@ -15,19 +15,19 @@ def initializePopulation(population):
 def populationMF(population):
     fitIndex = 0
     for i in range(len(population)):
-        if(population[i].fitness > population[i-1].fitness):
+        if(population[i].fitness >= population[i-1].fitness):
             fitIndex = i
     return fitIndex
 
 
 
 #Sort fittest to least fit
-def sortFit(population):
+#def sortFit(population):
 
-    populationSize = len(population)
-    for i in range(populationSize):
+#    populationSize = len(population)
+#    for i in range(populationSize):
         #Sorts population from most fit to least
-        population.sort(key = population[i].fitness)
+#        population.sort(key = population[i].fitness)
 
 
 #Single Crossover between two parents

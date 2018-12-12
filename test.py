@@ -8,8 +8,14 @@ MUTATIONRATE = 0.1
 #Array of instances of run
 populationArray = []
 
-gamePlay = Game()
-gamePlay.play()
+populationArray = gf.initializePopulation(MAXPOP)
+
+test_instructions = populationArray[4]
+
+
+
+gamePlay = Game(test_instructions)
+gamePlay.play(test_instructions)
 
 #populationArray = gf.initializePopulation(MAXPOP)
 #print(populationArray[5].instructions, '\n')

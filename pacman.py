@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 import pygame.gfxdraw
 import random
@@ -25,7 +26,14 @@ class Game:
 
 
     def play(self, inputs):
-        clock = pygame.time.Clock()
+        eloop = EventLoop(finished=False)
+
+        eloop.movePLAYER(self.player, inputs)
+        self.player.setFITNESS()
+        self.fitness = self.player.fitness
+        print(self.fitness)
+
+    def showLAST(self, inputs):
         eloop = EventLoop(finished=False)
 
         eloop.movePLAYER(self.player, inputs)
@@ -39,7 +47,6 @@ class Game:
             self.player.update(self.maze)
 
             self.display_game()
-            clock.tick(500)
 
     def display_game(self):
         self.screen.fill((0, 0, 0))
@@ -55,3 +62,4 @@ for i in range(41):
     inputs.append(randomNUMBER)
 game = Game(inputs)
 game.play(inputs)
+game.showLAST(inputs)

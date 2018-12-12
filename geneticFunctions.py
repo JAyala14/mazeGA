@@ -11,10 +11,23 @@ def initializePopulation(population):
 
     return randomPopulation
 
-#Sort fittest to least fit
-#def sortFit(population):
+#Get index of most fit
+def populationMF(population):
+    fitIndex = 0
+    for i in range(len(population)):
+        if(population[i].fitness > population[i-1].fitness):
+            fitIndex = i
+    return fitIndex
 
-    #Sorts population from most fit to least
+
+
+#Sort fittest to least fit
+def sortFit(population):
+
+    populationSize = len(population)
+    for i in range(populationSize):
+        #Sorts population from most fit to least
+        population.sort(key = population[i].fitness)
 
 
 #Single Crossover between two parents

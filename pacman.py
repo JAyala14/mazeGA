@@ -21,6 +21,8 @@ class Game:
 
         self.player = Player(self.settings, self.screen, self.maze)
 
+        self.fitness = 0
+
 
     def play(self, inputs):
         clock = pygame.time.Clock()
@@ -28,7 +30,8 @@ class Game:
 
         eloop.movePLAYER(self.player, inputs)
         self.player.setFITNESS()
-        self.player.displayEND()
+        self.fitness = self.player.fitness
+        print(self.fitness)
 
         while not eloop.finished:
             eloop.check_events(self.settings, self.player, self.maze, inputs)

@@ -1,6 +1,8 @@
 import random
 import geneticFunctions as gf
 from pacman import Game
+
+
 #Define max population
 MAXPOP = 15
 #Define mutation rate
@@ -10,15 +12,31 @@ populationArray = []
 
 populationArray = gf.initializePopulation(MAXPOP)
 
-test_instructions = populationArray[4]
-
+fitnessArray = []
 
 for i in range(MAXPOP):
-    gamePlay = Game(populationArray[i])
+    gamePlay = Game()
     gamePlay.play(populationArray[i].instructions)
+    fitnessArray.append(gamePlay.fitness)
 
-x = gf.populationMF(populationArray)
-print(x)
+
+print(fitnessArray)
+
+
+mostFit = 0
+
+for i in range(len(fitnessArray)):
+    if(fitnessArray[i] >= fitnessArray[mostFit]):
+        mostFit = i
+
+print (mostFit)
+
+gamePlay.play(populationArray[mostFit].instructions)
+gamePlay.display_game()
+
+
+#x = gf.populationMF(populationArray)
+#print(x)
 
 
 #gf.sortFit(populationArray)

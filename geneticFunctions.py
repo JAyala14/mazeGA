@@ -13,11 +13,13 @@ def initializePopulation(population):
 
 #Get index of most fit
 def populationMF(population):
-    fitIndex = 0
+    mostFIT = 0
+
     for i in range(len(population)):
-        if(population[i].fitness > population[i-1].fitness):
-            fitIndex = i
-    return fitIndex
+        if population[i].fitness > mostFIT:
+            mostFIT = population[i].fitness
+
+    return mostFIT
 
 
 

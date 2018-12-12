@@ -56,47 +56,11 @@ class Game:
         self.player.blitme()
 
         pygame.display.flip()
-<<<<<<< HEAD
-=======
 
 inputs = []
-
 inputs.append(1)
-inputs.append(1)
-inputs.append(0)
-inputs.append(1)
-inputs.append(1)
-inputs.append(1)
-inputs.append(0)
-inputs.append(0)
-inputs.append(1)
-inputs.append(1)
-inputs.append(1)
-inputs.append(2)
-inputs.append(2)
-inputs.append(1)
-inputs.append(1)
-inputs.append(1)
-inputs.append(1)
-inputs.append(2)
-inputs.append(1)
-inputs.append(1)
-inputs.append(0)
-inputs.append(1)
-inputs.append(0)
-inputs.append(0)
-inputs.append(0)
-inputs.append(3)
-inputs.append(3)
 
 game = Game()
 game.play(inputs)
-<<<<<<< HEAD
-game.play(inputs)
-game.play(inputs)
-game.play(inputs)
-game.showLAST(inputs)
-=======
-game.showLAST(inputs)
->>>>>>> 9ff86c0b3a06be582ae9acd39ae0a3c8a919d410
->>>>>>> 9421298785ff6ad5f9cfcc726b23b6e7b1874094
+
+print(game.fitness)

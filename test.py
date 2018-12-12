@@ -6,20 +6,23 @@ MAXPOP = 15
 #Define mutation rate
 MUTATIONRATE = 0.1
 #Array of instances of run
-populationArray = []
 
 populationArray = gf.initializePopulation(MAXPOP)
 
 test_instructions = populationArray[4]
 
+maxFITNESS = 0
+fitINDEX = 0
+
 
 for i in range(MAXPOP):
-    gamePlay = Game(populationArray[i])
+    gamePlay = Game()
     gamePlay.play(populationArray[i].instructions)
 
-x = gf.populationMF(populationArray)
-print(x)
+    if(gamePlay.fitness > maxFITNESS):
+        maxFITNESS = gamePlay.fitness
 
+print(maxFITNESS)
 
 #gf.sortFit(populationArray)
 

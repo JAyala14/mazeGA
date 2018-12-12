@@ -34,6 +34,7 @@ class Game:
         print(self.fitness)
 
     def showLAST(self, inputs):
+        clock = pygame.time.Clock()
         eloop = EventLoop(finished=False)
 
         eloop.movePLAYER(self.player, inputs)
@@ -47,6 +48,7 @@ class Game:
             self.player.update(self.maze)
 
             self.display_game()
+            clock.tick(20)
 
     def display_game(self):
         self.screen.fill((0, 0, 0))
@@ -57,9 +59,37 @@ class Game:
 
 inputs = []
 
-for i in range(41):
-    randomNUMBER = random.randint(0,3)
-    inputs.append(randomNUMBER)
+inputs.append(1)
+inputs.append(1)
+inputs.append(0)
+inputs.append(1)
+inputs.append(1)
+inputs.append(1)
+inputs.append(0)
+inputs.append(0)
+inputs.append(1)
+inputs.append(1)
+inputs.append(1)
+inputs.append(2)
+inputs.append(2)
+inputs.append(1)
+inputs.append(1)
+inputs.append(1)
+inputs.append(1)
+inputs.append(2)
+inputs.append(1)
+inputs.append(1)
+inputs.append(0)
+inputs.append(1)
+inputs.append(0)
+inputs.append(0)
+inputs.append(0)
+inputs.append(3)
+inputs.append(3)
+
 game = Game()
+game.play(inputs)
+game.play(inputs)
+game.play(inputs)
 game.play(inputs)
 game.showLAST(inputs)

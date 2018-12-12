@@ -1,6 +1,7 @@
 import pygame
 
 import pygame.gfxdraw
+import random
 
 from maze import Maze
 from eventloop import EventLoop
@@ -21,33 +22,10 @@ class Game:
         self.player = Player(self.settings, self.screen, self.maze)
 
         self.inputs = []
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(0)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(0)
-        self.inputs.append(0)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(2)
-        self.inputs.append(2)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(2)
-        self.inputs.append(1)
-        self.inputs.append(1)
-        self.inputs.append(0)
-        self.inputs.append(1)
-        self.inputs.append(0)
-        self.inputs.append(0)
-        self.inputs.append(0)
-        self.inputs.append(3)
-        self.inputs.append(3)
+
+        for i in range(41):
+            randomNUMBER = random.randint(0,3)
+            self.inputs.append(randomNUMBER)
 
 
     def play(self):

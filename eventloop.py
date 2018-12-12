@@ -37,6 +37,7 @@ class EventLoop:
                 player.moveLEFT()
                 player.index = 2
 
+
     def check_keydown_events(self, event, player):
         if event.key == pygame.K_q:
             sys.exit()
